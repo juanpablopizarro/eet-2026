@@ -1,14 +1,3 @@
----
-
-### Audit Template: `docs/AI_LOG.md`
-
-```markdown
-# 🤖 AI Development Audit Log
-
-This document tracks how our team utilized Artificial Intelligence during development. Document major interactions where AI assisted in architecture, asset creation, feature implementation, debugging, or test generation.
-
----
-
 ## Log Entry Template
 
 ### Entry #[ID] - [Feature / Problem Name]
