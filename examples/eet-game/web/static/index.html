@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>👾 EET Space Invaders</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1 class="title">👾 EET SPACE INVADERS</h1>
+
+  <!-- HUD -->
+  <div id="hud">
+    <div class="hud-item">
+      <span class="label">SCORE</span>
+      <span class="value" id="score-val">000000</span>
+    </div>
+    <div class="hud-item">
+      <span class="label">HI-SCORE</span>
+      <span class="value" id="hi-val">000000</span>
+    </div>
+    <div class="hud-item">
+      <span class="label">WAVE</span>
+      <span class="value" id="level-val">—</span>
+    </div>
+    <div class="hud-item">
+      <span class="label">LIVES</span>
+      <span class="value" id="lives-val">🚀🚀🚀</span>
+    </div>
+  </div>
+
+  <!-- Game canvas + overlays -->
+  <div id="game-wrapper">
+    <canvas id="game-canvas"></canvas>
+
+    <!-- Menu overlay -->
+    <div class="overlay" id="overlay-menu">
+      <h2>👾 SPACE INVADERS</h2>
+      <p>
+        ← / → &nbsp;or&nbsp; A / D — MOVE<br/>
+        SPACE — FIRE<br/>
+        P — PAUSE<br/>
+        ENTER — START
+      </p>
+      <p class="blink" style="color:#ffff00;font-size:0.55rem;text-shadow:0 0 10px #ffff00;">
+        PRESS ENTER TO START
+      </p>
+      <div style="margin-top:8px;font-size:0.38rem;color:#446;line-height:2.2;">
+        <span style="color:#39ff14">■</span> = 10pts &nbsp;
+        <span style="color:#00ffff">■</span> = 20pts &nbsp;
+        <span style="color:#ff00ff">■</span> = 30pts &nbsp;
+        🛸 = ???pts
+      </div>
+    </div>
+
+    <!-- Paused overlay -->
+    <div class="overlay hidden" id="overlay-paused">
+      <h2>⏸ PAUSED</h2>
+      <p class="blink">PRESS P TO RESUME</p>
+    </div>
+
+    <!-- Game Over overlay -->
+    <div class="overlay hidden" id="overlay-gameover">
+      <h2 style="color:#ff2244;text-shadow:0 0 20px #ff2244,0 0 60px #ff00ff;">
+        💥 GAME OVER
+      </h2>
+      <p class="score-display" id="go-score">SCORE  000000</p>
+      <p class="blink" style="color:#ffff00;font-size:0.55rem;text-shadow:0 0 10px #ffff00;">
+        PRESS ENTER TO RETRY
+      </p>
+    </div>
+
+    <!-- Victory overlay -->
+    <div class="overlay hidden" id="overlay-victory">
+      <h2 style="color:#ffff00;text-shadow:0 0 20px #ffff00,0 0 60px #ff00ff;">
+        🏆 YOU WIN!
+      </h2>
+      <p class="score-display" id="vic-score">SCORE  000000</p>
+      <p>EARTH IS SAFE... FOR NOW.</p>
+      <p class="blink" style="color:#39ff14;font-size:0.55rem;text-shadow:0 0 10px #39ff14;">
+        PRESS ENTER TO PLAY AGAIN
+      </p>
+    </div>
+  </div>
+
+  <!-- Touch controls (shown on mobile) -->
+  <div id="touch-controls">
+    <button class="touch-btn" id="btn-left">◀</button>
+    <button class="touch-btn" id="btn-fire">🔥 FIRE</button>
+    <button class="touch-btn" id="btn-right">▶</button>
+    <button class="touch-btn" id="btn-start">▶ START</button>
+  </div>
+
+  <!-- Controls hint (desktop) -->
+  <div id="controls">
+    <span>←/A</span> move left &nbsp;|&nbsp;
+    <span>→/D</span> move right &nbsp;|&nbsp;
+    <span>SPACE</span> fire &nbsp;|&nbsp;
+    <span>P</span> pause &nbsp;|&nbsp;
+    <span>ENTER</span> start/restart
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
